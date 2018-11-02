@@ -52,6 +52,11 @@ from paho.mqtt.client import (  # noqa: F401
 __version__ = "1.0.4"
 
 
+# Python2 / Python3 compatibility
+if sys.version_info[0] >= 3:
+    # define some alias for python2 compatibility
+    unicode = str
+
 #: Container for topic + qos
 TopicQos = namedtuple("TopicQos", ["topic", "qos"])
 
